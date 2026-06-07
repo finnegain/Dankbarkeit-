@@ -4,41 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="git push test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/PyWebanwendung/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/awesomegallery/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/accounts/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/awesomegallery/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/PyWebanwendung/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/awesomegallery/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/PyWebanwendung/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/awesomegallery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/PyWebanwendung/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/awesomegallery/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/PyWebanwendung/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/gallery/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/media/images/IT.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/media/images/IT.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/media/images/IT_2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/media/images/IT_2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/media/images/Yua_und_Ben.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/media/images/Yua_und_Ben.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesomegallery/templates/gallery/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/upload.html" afterDir="false" />
+    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Refactor">
+      <change afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/text_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/upload_text.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +77,11 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -129,7 +107,7 @@
       <workItem from="1779255683206" duration="7183000" />
       <workItem from="1779955411691" duration="7404000" />
       <workItem from="1780733451146" duration="172000" />
-      <workItem from="1780733768135" duration="4179000" />
+      <workItem from="1780733768135" duration="8935000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />
@@ -187,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780738541228</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1780829241623</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780829241623</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +197,7 @@
     <MESSAGE value="Add navigation links, reorganize urls" />
     <MESSAGE value="Use Template inheritance, global stylesheet, navigation" />
     <MESSAGE value="git push test" />
-    <option name="LAST_COMMIT_MESSAGE" value="git push test" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
 </project>

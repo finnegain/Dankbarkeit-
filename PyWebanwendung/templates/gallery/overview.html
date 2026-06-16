@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Welcome</h1>
+    <!--<h1>Welcome</h1>
 
 {% if user.is_authenticated %}
     <p><a href="{% url 'upload' %}">Upload new Image</a></p>
@@ -31,6 +31,44 @@
     {% for image in images %}
     <li><img src="{{ image.image.url }}"><br>{{ image.title }}</li>
     {% endfor %}
-</ul>
+</ul> -->
+
+    <h1>Welcome</h1>
+
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'upload' %}">Upload new Image</a></p>
+        <p><a href="{% url 'upload_text' %}">Upload Text</a></p>
+    {% endif %}
+
+    <ul>
+        {% for image in images %}
+            <li><img src="{{ image.image.url }}" width="200"><br>{{ image.title }}</li>
+        {% endfor %}
+    </ul>
+
+
+    <div id="bubble-container">
+        {% for message in messages %}
+            <div class="bubble"
+                 data-text="{{ message.text }}"
+                 data-date="{{ message.created_at|date:'d.m.Y H:i' }}"
+                 data-likes="{{ message.total_likes }}"
+                 data-url="{% url 'like_message' message.pk %}">
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="message-popup">
+        <button class="close-btn" id="close-popup">X</button>
+        <p id="popup-text" style="margin-top: 15px; font-style: italic;"></p>
+        <small id="popup-date" style="color: gray;"></small>
+        <hr>
+        <form id="popup-form" method="POST" action="">
+            {% csrf_token %}
+            <button type="submit">
+                👍 <span id="popup-likes"></span> Likes
+            </button>
+        </form>
+    </div>
 
 {% endblock %}

@@ -2,4 +2,89 @@ body {
     font-family: sans-serif;
     background-color: cadetblue;
     margin: 3em;
+    overflow-x: hidden;
+}
+
+/* Der Container für die Bälle liegt unsichtbar über/unter der Seite */
+#bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Lässt Klicks auf die normale Bildergalerie durch */
+    z-index: 10;
+}
+
+/* Das Aussehen der Seifenblasen */
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Starten knapp unterhalb des Bildschirms */
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    pointer-events: auto; /* Macht die Bälle klickbar */
+    animation: float infinite linear;
+    transition: transform 0.2s;
+}
+
+.bubble:hover {
+    transform: scale(1.1); /* Wachsen leicht, wenn man mit der Maus darüber fährt */
+}
+
+/* Die Flieg-Animation (von unten nach oben) */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Diese Klasse wird per JS gesetzt, um die Animation beim Klick anzuhalten */
+.paused .bubble {
+    animation-play-state: paused !important;
+}
+
+/* Das Pop-up Styling */
+#message-popup {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    width: 250px;
+    display: none; /* Standardmäßig versteckt */
+    transform: translate(-50%, -100%); /* Positioniert es zentriert über dem Klickpunkt */
+    margin-top: -15px;
+    pointer-events: auto;
+}
+
+#message-popup.active {
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }

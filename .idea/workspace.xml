@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="saubere .venv">
+    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Erstes CSS Styling, Blasen verlaufen horizontal">
+      <change afterPath="$PROJECT_DIR$/PyWebanwendung/static/images/Grass_texture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyWebanwendung/static/images/Grass_texure_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
     "git.auto.fetch.suggestion.counter": "2",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Eva/PycharmProjects/PyWebanwendung/PyWebanwendung/static/fonts",
+    "last_opened_file_path": "C:/Users/Eva/PycharmProjects/PyWebanwendung/PyWebanwendung/static/images",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -93,6 +93,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eva\PycharmProjects\PyWebanwendung\PyWebanwendung\static\images" />
       <recent name="C:\Users\Eva\PycharmProjects\PyWebanwendung\PyWebanwendung\static\fonts" />
       <recent name="$PROJECT_DIR$/awesomegallery/gallery" />
     </key>
@@ -156,7 +157,7 @@
       <workItem from="1781696476025" duration="2395000" />
       <workItem from="1781860521297" duration="602000" />
       <workItem from="1782292346523" duration="1000000" />
-      <workItem from="1782382751685" duration="3188000" />
+      <workItem from="1782382751685" duration="6433000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />
@@ -262,7 +263,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780926434143</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Erstes CSS Styling, Blasen verlaufen horizontal">
+      <option name="closed" value="true" />
+      <created>1782386232318</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782386232318</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Erstes CSS Styling, Blasen verlaufen horizontal">
+      <option name="closed" value="true" />
+      <created>1782386242046</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782386242046</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +307,9 @@
     <MESSAGE value="git push test" />
     <MESSAGE value="Testfiles wieder gelöscht" />
     <MESSAGE value="saubere .venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="saubere .venv" />
+    <MESSAGE value="TEST TEST: CSS Hintergrundfarbe angepasst" />
+    <MESSAGE value="Erstes CSS Styling, Blasen verlaufen horizontal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Erstes CSS Styling, Blasen verlaufen horizontal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PyWebanwendung$manage.coverage" NAME="manage Coverage Results" MODIFIED="1781698134295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PyWebanwendung" />

@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="saubere .venv">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/django_gallery_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_gallery_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +42,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:finnegain/PyWebanwendung.git&quot;,
-    &quot;accountId&quot;: &quot;8d9cd4ce-3b05-4398-a0bb-1a0cc66b8434&quot;
+    &quot;url&quot;: &quot;https://github.com/finnegain/PyWebanwendung.git&quot;,
+    &quot;accountId&quot;: &quot;872f7240-59cc-477f-bfd9-94bb93fdc949&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -73,7 +73,7 @@
     "git.auto.fetch.suggestion.counter": "2",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/finnpfeilschifter/Dokumente/pyweb/PyWebanwendung",
+    "last_opened_file_path": "C:/Users/Eva/PycharmProjects/PyWebanwendung/PyWebanwendung/static/fonts",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -93,6 +93,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eva\PycharmProjects\PyWebanwendung\PyWebanwendung\static\fonts" />
       <recent name="$PROJECT_DIR$/awesomegallery/gallery" />
     </key>
   </component>
@@ -152,7 +153,10 @@
       <workItem from="1781586190189" duration="1955000" />
       <workItem from="1781695816551" duration="320000" />
       <workItem from="1781696353806" duration="2000" />
-      <workItem from="1781696476025" duration="1647000" />
+      <workItem from="1781696476025" duration="2395000" />
+      <workItem from="1781860521297" duration="602000" />
+      <workItem from="1782292346523" duration="1000000" />
+      <workItem from="1782382751685" duration="3188000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />
@@ -289,6 +293,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="saubere .venv" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyWebanwendung$manage.coverage" NAME="manage Coverage Results" MODIFIED="1781698032438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PyWebanwendung" />
+    <SUITE FILE_PATH="coverage/PyWebanwendung$manage.coverage" NAME="manage Coverage Results" MODIFIED="1781698134295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PyWebanwendung" />
   </component>
 </project>

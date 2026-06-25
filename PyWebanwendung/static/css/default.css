@@ -1,3 +1,4 @@
+
 body {
     font-family: sans-serif;
     background-color: darkgreen;
@@ -5,6 +6,15 @@ body {
     overflow-x: hidden;
 }
 
+ h1{
+     font-family: "peckham-press", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     color: white;
+     font-size: 90px;
+     text-align: center;
+     justify-content: center;
+ }
 /* Der Container für die Bälle liegt unsichtbar über/unter der Seite */
 #bubble-container {
     position: fixed;
@@ -19,7 +29,8 @@ body {
 /* Das Aussehen der Seifenblasen */
 .bubble {
     position: absolute;
-    bottom: -100px; /* Starten knapp unterhalb des Bildschirms */
+    /*bottom: -100px; /* Starten knapp unterhalb des Bildschirms */
+    left: -50px; /*Für horizontale Bewegung, starten knapp ausserhalb links*/
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.3));
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
@@ -35,7 +46,7 @@ body {
 }
 
 /* Die Flieg-Animation (von unten nach oben) */
-@keyframes float {
+/*@keyframes float {
     0% {
         transform: translateY(0) translateX(0);
         opacity: 0;
@@ -48,6 +59,24 @@ body {
     }
     100% {
         transform: translateY(-120vh) translateX(50px);
+        opacity: 0;
+    }
+}*/
+
+/* Die Flieg-Animation (von links nach rechts) */
+@keyframes float {
+    0% {
+        transform: translateX(-10vw) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(110vw) translateY(-20px);
         opacity: 0;
     }
 }

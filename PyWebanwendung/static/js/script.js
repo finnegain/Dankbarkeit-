@@ -20,12 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const duration = Math.random() * 15 + 10;
         // Zufällige Verzögerung, damit nicht alle gleichzeitig starten (-20s bis 0s)
         const delay = Math.random() * -20;
+        //Zufällige Höhe
+        const topPos = Math.random() * 90; // 0–90vh
+
+
 
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.left = `${leftPos}vw`;
         bubble.style.animationDuration = `${duration}s`;
         bubble.style.animationDelay = `${delay}s`;
+        bubble.style.top = `${topPos}vh`;
 
         // Klick-Event für jeden Ball
         bubble.addEventListener('click', (e) => {

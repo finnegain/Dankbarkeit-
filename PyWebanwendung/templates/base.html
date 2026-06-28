@@ -22,5 +22,13 @@
     {% endif %}
 </nav>
 {% block content %}{% endblock %}
+<audio id="bg-music" loop>
+    <source src="{% static 'music/bubbles.mp3' %}" type="audio/mpeg">
+    Dein Browser unterstützt kein Audio.
+</audio>
+
+<button id="music-toggle" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 10px; border-radius: 8px; cursor: pointer;">
+    🎵 Musik abspielen
+</button>
 </body>
 </html>

@@ -2,50 +2,11 @@
 
 {% block content %}
 
-    <!--<h1>DANKBARKEIT</h1>
-
-{% if user.is_authenticated %}
-    <p><a href="{% url 'upload' %}">Upload new Image</a></p>
-{% endif %}
-
-{% if user.is_authenticated %}
-    <p><a href="{% url 'upload_text' %}">Upload Text</a></p>
-{% endif %}
-
-{% for message in messages %}
-    <div class="message-box">
-        <p>"{{ message.text }}"</p>
-
-        <small>Veröffentlicht am: {{ message.created_at|date:"d.m.Y H:i" }}</small>
-
-        <form action="{% url 'like_message' message.pk %}" method="POST">
-            {% csrf_token %}
-            <button type="submit">
-                👍 {{ message.total_likes }} Likes
-            </button>
-        </form>
-    </div>
-{% endfor %}
-
-<ul>
-    {% for image in images %}
-    <li><img src="{{ image.image.url }}"><br>{{ image.title }}</li>
-    {% endfor %}
-</ul> -->
-
     <h1>DANKBARKEIT</h1>
 
     {% if user.is_authenticated %}
-        <p><a href="{% url 'upload' %}">Upload new Image</a></p>
-        <p><a href="{% url 'upload_text' %}">Upload Text</a></p>
+        <p><a href="{% url 'upload_text' %}">Nachricht verfassen</a></p>
     {% endif %}
-
-    <ul>
-        {% for image in images %}
-            <li><img src="{{ image.image.url }}" width="200"><br>{{ image.title }}</li>
-        {% endfor %}
-    </ul>
-
 
     <div id="bubble-container">
         {% for message in messages %}

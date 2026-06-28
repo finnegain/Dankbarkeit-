@@ -2,7 +2,7 @@
 body {
     margin: 3em;
     overflow-x: hidden;
-     background-color: #7FA542;
+    background-color: #7FA542;
 }
 
 /*Background Grass Layer*/
@@ -32,6 +32,12 @@ body::before {
  p{
      font-family: "inria-serif", sans-serif;
      color: white;
+     font-weight: 400;
+     font-style: normal;
+ }
+ #popup-text{
+     font-family: "inria-serif", sans-serif;
+     color: #6e9320;
      font-weight: 400;
      font-style: normal;
  }

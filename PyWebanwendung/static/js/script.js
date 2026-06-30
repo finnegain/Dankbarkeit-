@@ -3,25 +3,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('bubble-container');
     const popup = document.getElementById('message-popup');
 
-    // Elemente im Pop-up, die wir mit Text füllen müssen
     const popupText = document.getElementById('popup-text');
     const popupDate = document.getElementById('popup-date');
     const popupLikes = document.getElementById('popup-likes');
     const popupForm = document.getElementById('popup-form');
     const closeBtn = document.getElementById('close-popup');
 
-    // Jedem Ball zufällige Eigenschaften geben
+    // Random Attribute pro Bubble
     bubbles.forEach(bubble => {
-        // Zufällige Größe zwischen 50px und 100px
         const size = Math.floor(Math.random() * 50) + 50;
-        // Zufällige Startposition auf der X-Achse (0% bis 90% der Fensterbreite)
-        const leftPos = Math.random() * 90;
-        // Zufällige Dauer für den Flug nach oben (10 bis 25 Sekunden)
+        const leftPos = 0
         const duration = Math.random() * 15 + 10;
-        // Zufällige Verzögerung, damit nicht alle gleichzeitig starten (-20s bis 0s)
         const delay = Math.random() * -20;
-        //Zufällige Höhe
-        const topPos = Math.random() * 90; // 0–90vh
+        const topPos = Math.random() * 60+ 20;
 
 
 
@@ -32,33 +26,68 @@ document.addEventListener("DOMContentLoaded", function() {
         bubble.style.animationDelay = `${delay}s`;
         bubble.style.top = `${topPos}vh`;
 
-        // Klick-Event für jeden Ball
+        // Bubble klick
         bubble.addEventListener('click', (e) => {
-            // 1. Alle Animationen anhalten
             container.classList.add('paused');
 
-            // 2. Daten aus dem Ball auslesen und ins Pop-up schreiben
             popupText.textContent = `"${bubble.dataset.text}"`;
             popupDate.textContent = `Veröffentlicht am: ${bubble.dataset.date}`;
             popupLikes.textContent = bubble.dataset.likes;
 
-            // 3. Dem Formular sagen, welche URL beim Liken aufgerufen werden soll
             popupForm.action = bubble.dataset.url;
-
-            // 4. Pop-up direkt über dem angeklickten Ball positionieren
             const rect = bubble.getBoundingClientRect();
-            // Wir positionieren es exakt in die Mitte des Balls
+
             popup.style.left = `${rect.left + (size / 2)}px`;
             popup.style.top = `${rect.top}px`;
 
-            // 5. Pop-up einblenden
             popup.classList.add('active');
         });
     });
 
-    // Pop-up schließen und Animation fortsetzen
     closeBtn.addEventListener('click', () => {
         popup.classList.remove('active');
         container.classList.remove('paused');
+    });
+});
+
+// Musik
+
+document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle');
+
+    const isPlaying = localStorage.getItem('musicPlaying') === 'true';
+    const trackPosition = localStorage.getItem('musicPosition') || 0;
+
+    audio.currentTime = trackPosition;
+
+    if (isPlaying) {
+        audio.play().then(() => {
+            toggleBtn.innerHTML = "⏸️ Musik pausieren";
+        }).catch(error => {
+            console.log("Browser hat Autoplay blockiert. User muss erst klicken.");
+            toggleBtn.innerHTML = "🎵 Musik abspielen";
+            localStorage.setItem('musicPlaying', 'false');
+        });
+    } else {
+        toggleBtn.innerHTML = "🎵 Musik abspielen";
+    }
+
+    // Play Button
+    toggleBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            toggleBtn.innerHTML = "⏸️ Musik pausieren";
+            localStorage.setItem('musicPlaying', 'true');
+        } else {
+            audio.pause();
+            toggleBtn.innerHTML = "🎵 Musik abspielen";
+            localStorage.setItem('musicPlaying', 'false');
+        }
+    });
+
+    // Musk Timecode merken um dort wieder einzusetzen
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('musicPosition', audio.currentTime);
     });
 });

@@ -13,21 +13,8 @@ class ImageForm(forms.ModelForm):
 # Create your views here.
 
 def overview(request):
-    all_images = Image.objects.all()
     all_messages = TextMessage.objects.all().order_by('-created_at')
-    return render(request, 'gallery/overview.html', dict(images=all_images, messages=all_messages))
-
-@login_required
-def upload(request):
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    else:
-        form = ImageForm()
-    form = ImageForm()
-    return render(request, 'gallery/upload.html', dict(form=form))
+    return render(request, 'gallery/overview.html', dict(messages=all_messages))
 
 #Textnachrichten
 class TextMessageForm(forms.ModelForm):
@@ -49,12 +36,6 @@ def upload_text(request):
         form = TextMessageForm()
 
     return render(request, 'gallery/upload_text.html', dict(form=form))
-
-
-def text_overview(request):
-    all_messages = TextMessage.objects.all().order_by('-created_at')
-    return render(request, 'gallery/text_overview.html', dict(messages=all_messages))
-
 
 @login_required
 def like_message(request, pk):

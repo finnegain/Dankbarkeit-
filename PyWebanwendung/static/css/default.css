@@ -29,30 +29,11 @@ body::before {
      text-align: center;
      justify-content: center;
  }
-
-
- h2 {
-     font-family: "luxurious-script", script, sans-serif;
-font-weight: 400;
-font-style: normal;
-     font-size: 64px;
-     color: #441C08;
-     text-align: center;
-     margin: 0;
- }
  p{
      font-family: "inria-serif", sans-serif;
      color: white;
      font-weight: 400;
      font-style: normal;
- }
-
- a{
-  font-family: "inria-serif", sans-serif;
-     color: white;
-     font-weight: 400;
-     font-style: normal;
-     text-decoration: none;
  }
  nav {
      font-family: "inria-serif", sans-serif;
@@ -61,16 +42,14 @@ font-style: normal;
      font-style: normal;
  }
 
- button,
- .login-form button,
-.login-form input[type="submit"] {
+ button {
      font-family: "inria-serif", sans-serif;
-     background-color: #DCC7C4;
+     background-color: #EDE8D9;
       font-weight: 700;
      font-style: normal;
   border: none;
   color: #441C08;
-  padding: 10px 10px;
+  padding: 10px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -78,76 +57,6 @@ font-style: normal;
   cursor: pointer;
      border-radius: 12px;
  }
-
- button:hover,
- .login-form button:hover {
-    background: #D3B9B6;
-}
-
- /*STYLING LOGIN FORM ////////////////////////////////////////////////////////////*/
-.login-form {
-    width: 500px;
-    margin: 100px auto;
-    padding: 25px;
-    border-radius: 20px;
-    background: #EEE9DA;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.login-form p{
-    color: #441C08;
-}
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-}
-
-.form-row label {
-    width: 40%;
-    font-weight: bold;
-    color: #441C08;
-}
-
-.form-row input {
-    width: 60%;
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: none;
-
-    background: #DCC7C4;
-    color: #441C08;
-
-    outline: none;
-    transition: 0.2s;
-}
-
-.form-row input:focus {
-    background: #D3B9B6;
-    box-shadow: 0 0 0 2px #D3B9B6;
-}
-.form-row input:not(:placeholder-shown) {
-    background: #DCC7C4;
-    color: #441C08;
-}
-.login-footer {
-    text-align: center;
-}
-
-.login-footer a {
-    color: #441C08;
-}
-
-.login-footer a:hover {
-    text-decoration: underline;
-}
-
-
 /* Der Container für die Bälle liegt unsichtbar über/unter der Seite */
 #bubble-container {
     position: fixed;

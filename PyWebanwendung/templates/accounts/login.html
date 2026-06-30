@@ -4,16 +4,32 @@
 
 {% block content %}
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" class="login-form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="hidden" name="next" value="{{ next }}">
-    <p><input type="submit" value="Login"></p>
-</form>
+<h2>Account</h2>
+    <div class="form-row">
+        <label for="{{ form.username.id_for_label }}">
+            {{ form.username.label }}
+        </label>
+        {{ form.username }}
+    </div>
 
-<p>
-    Don't have an account yet?
-    <a href="{% url 'register' %}">Register now</a>
-</p>
+    <div class="form-row">
+        <label for="{{ form.password.id_for_label }}">
+            {{ form.password.label }}
+        </label>
+        {{ form.password }}
+    </div>
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <button type="submit">Login</button>
+
+    <div class="login-footer">
+        Don't have an account yet?
+        <a href="{% url 'register' %}">Register now</a>
+    </div>
+
+</form>
 
 {% endblock %}

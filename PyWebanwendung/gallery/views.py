@@ -13,8 +13,23 @@ class ImageForm(forms.ModelForm):
 # Create your views here.
 
 def overview(request):
-    all_messages = TextMessage.objects.all().order_by('-created_at')
-    return render(request, 'gallery/overview.html', dict(messages=all_messages))
+    all_images = Image.objects.all()
+    newest_messages = TextMessage.objects.all().order_by('-created_at')[:3]
+
+    context = {
+        'images': all_images,
+        'messages': newest_messages
+    }
+    return render(request, 'gallery/overview.html', context)
+
+
+def archive(request):
+    older_messages = TextMessage.objects.all().order_by('-created_at')[3:]
+
+    context = {
+        'messages': older_messages
+    }
+    return render(request, 'gallery/archive.html', context)
 
 #Textnachrichten
 class TextMessageForm(forms.ModelForm):

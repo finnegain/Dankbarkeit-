@@ -39,7 +39,7 @@ h2 {
 
 p {
     font-family: "inria-serif", sans-serif;
-    color: white;
+    color: #441C08;
     font-weight: 400;
     font-style: normal;
 }
@@ -82,7 +82,16 @@ button:hover,
     background: #D3B9B6;
 }
 
-/* STYLING LOGIN FORM */
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .login-form {
     width: 500px;
     margin: 100px auto;
@@ -237,7 +246,7 @@ button:hover,
 
 .archive-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten, alle gleich breit */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 30px;
 }
@@ -247,7 +256,6 @@ button:hover,
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #007BFF;
 }
 
 @media (max-width: 900px) {
@@ -260,18 +268,4 @@ button:hover,
     .archive-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* Über das Projekt Section */
-#about-section {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, margin-bottom 0.5s ease-in-out;
-    margin-bottom: 0;
-    /* background: #007BFF; */
-}
-
-#about-section.open {
-    max-height: 500px !important;
-    margin-bottom: 20px !important;
 }

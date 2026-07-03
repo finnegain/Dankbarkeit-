@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <h1>Über das Projekt</h1>
+        <p>Willkommen bei unserer interaktiven Webanwendung! Dieses Projekt soll dir dabei helfen mehr Dankbarkeit
+            zu empfinden</p>
+        <p>Die Textnachrichten laufen als Schafe über den Bildschirm. Klicke sie an, um sie zu lesen oder
+            ihnen ein Like dazulassen. Die jüngsten 20 Schafe laufen hier umher, ältere wandern automatisch
+            auf die Weide, wo sie gemütlich Gras naschen und entspannten Beats lauschen.</p>
+        <br>
+        <button><a href="{% url 'overview' %}">&larr; zurück zur Übersicht</a></button>
+    </>
+    </div>
+
+{% endblock %}

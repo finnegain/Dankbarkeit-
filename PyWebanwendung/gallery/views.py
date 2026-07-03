@@ -31,6 +31,9 @@ def archive(request):
     }
     return render(request, 'gallery/archive.html', context)
 
+def about(request):
+    return render(request, 'gallery/about.html')
+
 #Textnachrichten
 class TextMessageForm(forms.ModelForm):
     class Meta:

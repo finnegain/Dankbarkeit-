@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>Nachrichten-Archiv</h1>
-<a href="{% url 'overview' %}">&larr; Zurück zur Übersicht</a>
+<button><a href="{% url 'overview' %}">&larr; Zurück zur Übersicht</a></button>
 
 <div class="archive-grid">
     {% for message in messages %}

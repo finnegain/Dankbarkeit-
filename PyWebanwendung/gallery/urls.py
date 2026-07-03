@@ -7,4 +7,5 @@ urlpatterns = [
     path('text/upload/', views.upload_text, name='upload_text'),
     path('text/like/<int:pk>/', views.like_message, name='like_message'),
     path('text/archive/', views.archive, name='archive'),
+    path('text/about/', views.about, name='about'),
 ]

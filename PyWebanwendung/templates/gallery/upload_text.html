@@ -2,25 +2,18 @@
 
 {% block content %}
 
-<h1>Text Upload</h1>
+    <h1>Text Upload</h1>
 
-<div class="form-container">
+    <div class="form-container">
         <h2>Neue anonyme Nachricht verfassen</h2>
-
-        <!-- Das Formular schickt die Daten per POST an den gleichen View (upload_text) zurück -->
         <form method="POST" action="">
-
-            <!-- SEHR WICHTIG: Das CSRF-Token schützt deine Seite vor bösartigen Angriffen -->
             {% csrf_token %}
-
-            <!-- Dies rendert dein Textfeld aus der TextMessageForm automatisch als <p>-Tags -->
             {{ form.as_p }}
 
             <button type="submit" class="btn">Nachricht hochladen</button>
         </form>
     </div>
 
-    <!-- Ein Link zurück zur Übersicht, falls der User es sich anders überlegt -->
-    <a href="{% url 'overview' %}" class="back-link">&larr; Zurück zur Übersicht</a>
+    <button><a href="{% url 'overview' %}" class="back-link">&larr; Zurück zur Übersicht</a></button>
 
 {% endblock %}

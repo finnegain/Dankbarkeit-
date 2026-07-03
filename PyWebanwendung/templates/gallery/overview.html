@@ -2,25 +2,12 @@
 
 {% block content %}
 
-    <div id="about-section">
-        <div class="about-content">
-            <h1>Über das Projekt</h1>
-            <p>Willkommen bei unserer interaktiven Webanwendung! Dieses Projekt soll dir dabei helfen mehr Dankbarkeit
-                zu empfinden</p>
-            <p>Die Textnachrichten laufen als Schafe über den Bildschirm. Klicke sie an, um sie zu lesen oder
-                ihnen ein Like dazulassen. Die jüngsten 20 Schafe laufen hier umher, ältere wandern automatisch
-                auf die Weide, wo sie gemütlich Gras naschen und entspannten Beats lauschen.</p>
-            <br>
-            <button id="btn-close-about">&larr; Zurück zur Übersicht</button>
-        </div>
-    </div>
-
-    <button id="btn-open-about">Über das Projekt</button>
+    <button><a href="{% url 'about' %}">Über dieses Projekt</a></button>
 
     <h1>DANKBARKEIT</h1>
 
     {% if user.is_authenticated %}
-        <p><a href="{% url 'upload_text' %}">Nachricht verfassen</a></p>
+        <button><a href="{% url 'upload_text' %}">Nachricht verfassen</a></button>
     {% endif %}
 
     <div id="bubble-container">
@@ -47,6 +34,6 @@
         </form>
     </div>
 
-    <p><a href="{% url 'archive' %}">Zum Nachrichten-Archiv</a></p>
+    <button><a href="{% url 'archive' %}">Zum Nachrichten-Archiv</a></button>
 
 {% endblock %}

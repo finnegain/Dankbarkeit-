@@ -6,23 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupLikes = document.getElementById('popup-likes');
     const popupForm = document.getElementById('popup-form');
     const closeBtn = document.getElementById('close-popup');
-    const aboutSection = document.getElementById('about-section');
-    const btnOpenAbout = document.getElementById('btn-open-about');
-    const btnCloseAbout = document.getElementById('btn-close-about');
-
-    // About section
-    if (btnOpenAbout && aboutSection) {
-        btnOpenAbout.addEventListener('click', () => {
-            aboutSection.classList.add('open');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-    }
-
-    if (btnCloseAbout && aboutSection) {
-        btnCloseAbout.addEventListener('click', () => {
-            aboutSection.classList.remove('open');
-        });
-    }
 
     function initBubbles() {
         const bubbles = document.querySelectorAll('.bubble');

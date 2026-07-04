@@ -1,15 +1,5 @@
 {% extends 'base.html' %}
 
-{% load static %}
-<style>
-    .bubble {
-        background-image: url("{% static 'images/runningsheep.gif' %}");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-</style>
-
 {% block content %}
 
     <button><a href="{% url 'about' %}">Über dieses Projekt</a></button>
@@ -20,9 +10,12 @@
         <button><a href="{% url 'upload_text' %}">Nachricht verfassen</a></button>
     {% endif %}
 
-    <div id="bubble-container">
+    {% load static %}
+
+    <div id="sheep-container">
         {% for message in messages %}
-            <div class="bubble"
+            <div class="sheep"
+                 data-id="{{ message.pk }}"
                  data-text="{{ message.text }}"
                  data-date="{{ message.created_at|date:'d.m.Y H:i' }}"
                  data-likes="{{ message.total_likes }}"
@@ -38,9 +31,7 @@
         <hr>
         <form id="popup-form" method="POST" action="">
             {% csrf_token %}
-            <button type="submit">
-                👍 <span id="popup-likes"></span> Likes
-            </button>
+            <button type="submit">👍 <span id="popup-likes"></span> Likes</button>
         </form>
     </div>
 

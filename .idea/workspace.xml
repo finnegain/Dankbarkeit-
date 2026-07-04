@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Archiv, automatischer Refresh, und About Section">
+    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Schafe gif hinzugefügt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +119,7 @@
       <workItem from="1781202957248" duration="1160000" />
       <workItem from="1781586190189" duration="1955000" />
       <workItem from="1783083276661" duration="556000" />
-      <workItem from="1783155230649" duration="392000" />
+      <workItem from="1783155230649" duration="4921000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />
@@ -228,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783080368310</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Schafe gif hinzugefügt">
+      <option name="closed" value="true" />
+      <created>1783155950306</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1783155950306</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +270,7 @@
     <MESSAGE value="Testfiles wieder gelöscht" />
     <MESSAGE value="saubere .venv" />
     <MESSAGE value="Archiv, automatischer Refresh, und About Section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Archiv, automatischer Refresh, und About Section" />
+    <MESSAGE value="Schafe gif hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schafe gif hinzugefügt" />
   </component>
 </project>

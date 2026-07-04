@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById('bubble-container');
+    const container = document.getElementById('sheep-container');
     const popup = document.getElementById('message-popup');
     const popupText = document.getElementById('popup-text');
     const popupDate = document.getElementById('popup-date');
@@ -7,72 +7,80 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupForm = document.getElementById('popup-form');
     const closeBtn = document.getElementById('close-popup');
 
-    function initBubbles() {
-        const bubbles = document.querySelectorAll('.bubble');
+    function initSheep() {
+        const allSheep = document.querySelectorAll('.sheep');
 
-        bubbles.forEach(bubble => {
-            if (bubble.dataset.initialized) return;
+        allSheep.forEach(sheep => {
+            if (sheep.dataset.initialized) return;
 
-            const size = Math.floor(Math.random() * 50) + 50;
-            const leftPos = Math.random() * 90;
-            const duration = Math.random() * 15 + 10;
-            const delay = Math.random() * -20;
+            const size = Math.floor(Math.random() * 60) + 60;
+            const topPos = Math.random() * 40 + 40;
+            const duration = Math.random() * 15 + 15;
+            const delay = Math.random() * -30;
 
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${leftPos}vw`;
-            bubble.style.animationDuration = `${duration}s`;
-            bubble.style.animationDelay = `${delay}s`;
+            sheep.style.width = `${size}px`;
+            sheep.style.height = `${size}px`;
+            sheep.style.top = `${topPos}vh`;
+            sheep.style.animation = `runRight ${duration}s linear ${delay}s infinite`;
+            sheep.dataset.initialized = "true";
 
-            bubble.dataset.initialized = "true";
-
-            bubble.addEventListener('click', () => {
+            sheep.addEventListener('click', () => {
                 container.classList.add('paused');
-                popupText.textContent = `"${bubble.dataset.text}"`;
-                popupDate.textContent = `Veröffentlicht am: ${bubble.dataset.date}`;
-                popupLikes.textContent = bubble.dataset.likes;
-                popupForm.action = bubble.dataset.url;
+                popupText.textContent = `"${sheep.dataset.text}"`;
+                popupDate.textContent = `Veröffentlicht am: ${sheep.dataset.date}`;
+                popupLikes.textContent = sheep.dataset.likes;
+                popupForm.action = sheep.dataset.url;
 
-                const rect = bubble.getBoundingClientRect();
+                const rect = sheep.getBoundingClientRect();
                 popup.style.left = `${rect.left + (size / 2)}px`;
-                popup.style.top = `${rect.top}px`;
+                popup.style.top = `${rect.top - 10}px`;
                 popup.classList.add('active');
             });
         });
     }
 
-    initBubbles();
+    initSheep();
 
     closeBtn.addEventListener('click', () => {
         popup.classList.remove('active');
         container.classList.remove('paused');
     });
 
-    // automatischer Refresh, ohne ganze Seite neu zu laden (damit Musik weiterläuft)
+    // Auto refresh ohne ganze Seite und bestehende Schafe neu zu laden
     setInterval(() => {
         fetch(window.location.href)
             .then(response => response.text())
             .then(html => {
-                // Wir wandeln den geladenen Text in HTML um
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
 
-                // Wir nehmen NUR den Bubble-Container aus der neuen Seite...
-                const newBubbles = doc.getElementById('bubble-container').innerHTML;
+                const newSheepNodes = doc.querySelectorAll('#sheep-container .sheep');
+                const currentContainer = document.getElementById('sheep-container');
 
-                // ...und ersetzen unseren aktuellen Container damit.
-                // Die Musik und der Rest der Seite spielen ungestört weiter!
-                container.innerHTML = newBubbles;
+                // Prüfen, ob es Schaf schon gibt. Falls nicht hinzufügen
+                const newIds = Array.from(newSheepNodes).map(s => s.dataset.id);
+                newSheepNodes.forEach(newSheep => {
+                    const existingSheep = currentContainer.querySelector(`.sheep[data-id="${newSheep.dataset.id}"]`);
+                    if (!existingSheep) {
+                        currentContainer.appendChild(newSheep);
+                    }
+                });
 
-                // Bälle neu initialisieren
-                initBubbles();
+                //Alte Schafe entfernen
+                const currentSheepNodes = currentContainer.querySelectorAll('.sheep');
+                currentSheepNodes.forEach(oldSheep => {
+                    if (!newIds.includes(oldSheep.dataset.id)) {
+                        oldSheep.style.opacity = '0';
+                        setTimeout(() => oldSheep.remove(), 1000);
+                    }
+                });
+                initSheep();
             })
-            .catch(err => console.error('Fehler beim Aktualisieren der Nachrichten:', err));
-    }, 15000);
+            .catch(err => console.error('Fehler beim Aktualisieren:', err));
+    }, 20000);
 });
 
 // Musik
-
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById('bg-music');
     const toggleBtn = document.getElementById('music-toggle');

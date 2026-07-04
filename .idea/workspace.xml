@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Archiv, automatischer Refresh, und About Section">
-      <change afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/gallery/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/upload_text.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/upload_text.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +64,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "AboutSection",
+    "git-widget-placeholder": "GIFs-and-animation",
     "git.auto.fetch.suggestion.counter": "2",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/finnpfeilschifter/Dokumente/pyweb/PyWebanwendung/PyWebanwendung/static/music",
@@ -123,6 +113,8 @@
       <workItem from="1780922814524" duration="2197000" />
       <workItem from="1781202957248" duration="1160000" />
       <workItem from="1781586190189" duration="1955000" />
+      <workItem from="1783083276661" duration="556000" />
+      <workItem from="1783155230649" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />

@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+<style>
+    .bubble {
+        background-image: url("{% static 'images/runningsheep.gif' %}");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+
 {% block content %}
 
     <button><a href="{% url 'about' %}">Über dieses Projekt</a></button>

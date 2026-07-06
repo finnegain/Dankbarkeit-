@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
-from gallery.models import TextMessage
+from main.models import TextMessage
 
 class TextMessageForm(forms.ModelForm):
     class Meta:
@@ -16,7 +16,7 @@ def overview(request):
     context = {
         'messages': newest_messages
     }
-    return render(request, 'gallery/overview.html', context)
+    return render(request, 'main/overview.html', context)
 
 def archive(request):
     older_messages = TextMessage.objects.all().order_by('-created_at')[10:]
@@ -24,10 +24,10 @@ def archive(request):
     context = {
         'messages': older_messages
     }
-    return render(request, 'gallery/archive.html', context)
+    return render(request, 'main/archive.html', context)
 
 def about(request):
-    return render(request, 'gallery/about.html')
+    return render(request, 'main/about.html')
 
 @login_required
 def upload_text(request):
@@ -41,7 +41,7 @@ def upload_text(request):
     else:
         form = TextMessageForm()
 
-    return render(request, 'gallery/upload_text.html', dict(form=form))
+    return render(request, 'main/upload_text.html', dict(form=form))
 
 @login_required
 def like_message(request, pk):

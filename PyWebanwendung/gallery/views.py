@@ -3,25 +3,20 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
-from gallery.models import Image, TextMessage
+from gallery.models import TextMessage
 
-class ImageForm(forms.ModelForm):
+class TextMessageForm(forms.ModelForm):
     class Meta:
-        model = Image
-        exclude = []
-
-# Create your views here.
+        model = TextMessage
+        fields = ['text']
 
 def overview(request):
-    #all_images = Image.objects.all()
     newest_messages = TextMessage.objects.all().order_by('-created_at')[:10]
 
     context = {
-        #'images': all_images,
         'messages': newest_messages
     }
     return render(request, 'gallery/overview.html', context)
-
 
 def archive(request):
     older_messages = TextMessage.objects.all().order_by('-created_at')[10:]
@@ -33,13 +28,6 @@ def archive(request):
 
 def about(request):
     return render(request, 'gallery/about.html')
-
-#Textnachrichten
-class TextMessageForm(forms.ModelForm):
-    class Meta:
-        model = TextMessage
-        fields = ['text']
-
 
 @login_required
 def upload_text(request):

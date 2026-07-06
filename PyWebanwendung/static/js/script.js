@@ -92,25 +92,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (isPlaying) {
         audio.play().then(() => {
-            toggleBtn.innerHTML = "⏸️ Musik pausieren";
+            toggleBtn.innerHTML = "Musik pausieren";
         }).catch(error => {
             console.log("Browser hat Autoplay blockiert. User muss erst klicken.");
-            toggleBtn.innerHTML = "🎵 Musik abspielen";
+            toggleBtn.innerHTML = "Musik abspielen";
             localStorage.setItem('musicPlaying', 'false');
         });
     } else {
-        toggleBtn.innerHTML = "🎵 Musik abspielen";
+        toggleBtn.innerHTML = "Musik abspielen";
     }
 
     // Play Button
     toggleBtn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            toggleBtn.innerHTML = "⏸️ Musik pausieren";
+            toggleBtn.innerHTML = "Musik pausieren";
             localStorage.setItem('musicPlaying', 'true');
         } else {
             audio.pause();
-            toggleBtn.innerHTML = "🎵 Musik abspielen";
+            toggleBtn.innerHTML = "Musik abspielen";
             localStorage.setItem('musicPlaying', 'false');
         }
     });

@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 popupLikes.textContent = sheep.dataset.likes;
                 popupForm.action = sheep.dataset.url;
 
-               /* const rect = sheep.getBoundingClientRect();
+                const rect = sheep.getBoundingClientRect();
                 popup.style.left = `${rect.left + (size / 2)}px`;
                 popup.style.top = `${rect.top - 10}px`;
-                popup.classList.add('active');*/
+                popup.classList.add('active');
 
             });
         });

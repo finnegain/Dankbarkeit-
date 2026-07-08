@@ -4,15 +4,26 @@
 
 {% block content %}
 
-<form action ="" method = "post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p><input type="submit" value="Register"></p>
-</form>
+    <form action="" method="post" class="form-container" enctype="multipart/form-data">
+        {% csrf_token %}
 
-<p>
-    Already have an account?
-    <a href="{% url 'login' %}">Login</a>
-</p>
+        <div class="form-header">
+            <a href="{% url 'overview' %}" class="back-arrow"></a>
+            <h2>Registrieren</h2>
+        </div>
 
+        {% for field in form %}
+            <div class="form-row">
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <p><input type="submit" value="Register"></p>
+
+        <div class="form-footer">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </form>
 {% endblock %}
+

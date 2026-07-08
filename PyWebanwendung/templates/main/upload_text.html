@@ -1,19 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Text Upload</h1>
-
+    <section id="about">
+        {% include "main/about.html" %}
+    </section>
+    <section id="hero">
     <div class="form-container">
-        <h2>Neue anonyme Nachricht verfassen</h2>
+        <div class="form-header">
+            <a href="{% url 'overview' %}" class="back-arrow"></a>
+            <h2>Neuer Gedanke</h2>
+        </div>
         <form method="POST" action="">
             {% csrf_token %}
-            {{ form.as_p }}
 
+            {% for field in form %}
+                <div class="form-row">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+ <button id="musicsheep" type="submit">
+                    <img src="{% static 'images/nomusic_sheep' %}" alt="Music">
+                </button>
             <button type="submit" class="btn">Nachricht hochladen</button>
         </form>
     </div>
 
-    <button><a href="{% url 'overview' %}" class="back-link">&larr; Zurück zur Übersicht</a></button>
-
+</section>
 {% endblock %}

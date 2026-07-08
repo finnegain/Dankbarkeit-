@@ -1,40 +1,51 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+    <section id="about">
+        {% include "main/about.html" %}
+    </section>
+    <section id="hero">
 
-    <button><a href="{% url 'about' %}">Über dieses Projekt</a></button>
 
-    <h1>DANKBARKEIT</h1>
+        <h1>DANKBARKEIT</h1>
 
-    {% if user.is_authenticated %}
-        <button><a href="{% url 'upload_text' %}">Nachricht verfassen</a></button>
-    {% endif %}
+        {% if user.is_authenticated %}
+            <a id="yourthoughts" href="{% url 'upload_text' %}">
+                <img src="{% static 'images/yourthoughts_sheep.png' %}" alt="DeineGedanken">
+                <span>Teile deine Gedanken</span>
+            </a>
+        {% endif %}
 
-    {% load static %}
 
-    <div id="sheep-container">
-        {% for message in messages %}
-            <div class="sheep"
-                 data-id="{{ message.pk }}"
-                 data-text="{{ message.text }}"
-                 data-date="{{ message.created_at|date:'d.m.Y H:i' }}"
-                 data-likes="{{ message.total_likes }}"
-                 data-url="{% url 'like_message' message.pk %}">
+
+        <div id="sheep-container">
+            {% for message in messages %}
+                <div class="sheep"
+                     data-id="{{ message.pk }}"
+                     data-text="{{ message.text }}"
+                     data-date="{{ message.created_at|date:'d.m.Y H:i' }}"
+                     data-likes="{{ message.total_likes }}"
+                     data-url="{% url 'like_message' message.pk %}">
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="message-popup">
+            <div class="close-btn">
+                <button type="button" id="close-popup">&times;</button>
             </div>
-        {% endfor %}
-    </div>
+            <p id="popup-text" style="margin-top: 15px; font-style: italic;"></p>
+            <small id="popup-date" style="color: #441C08;"></small>
+            <hr>
+            <form id="popup-form" method="POST" action="">
+                {% csrf_token %}
+                <button id="feelyou" type="submit">
+                    <img src="{% static 'images/fuehlich_Schaf.png' %}" alt="Fühl ich">
+                    <span id="popup-likes"></span>
+                </button>
+            </form>
+        </div>
 
-    <div id="message-popup">
-        <button class="close-btn" id="close-popup">X</button>
-        <p id="popup-text" style="margin-top: 15px; font-style: italic;"></p>
-        <small id="popup-date" style="color: gray;"></small>
-        <hr>
-        <form id="popup-form" method="POST" action="">
-            {% csrf_token %}
-            <button type="submit"><span id="popup-likes"></span> Fühl ich</button>
-        </form>
-    </div>
-
-    <button><a href="{% url 'archive' %}">Zum Nachrichten-Archiv</a></button>
+    </section>
 
 {% endblock %}

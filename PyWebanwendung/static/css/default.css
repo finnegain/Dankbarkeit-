@@ -1,9 +1,10 @@
 
 body {
-    margin: 3em;
+    margin: 0;
     overflow-x: hidden;
     background-color: #7FA542;
 }
+
 
 /*Background Grass Layer*/
 body::before {
@@ -52,6 +53,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 nav {
     font-family: "inria-serif", sans-serif;
     color: white;
@@ -59,9 +64,76 @@ nav {
     font-style: normal;
 }
 
+/*About und Hero scrollen*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+#about {
+    min-height: 100vh;
+    background-color: #A3C7C7;
+    position: relative;
+    z-index: 2;
+    padding-top: 70px;
+    /* min-height: 100vh;
+     padding-top: 70px;
+     background-color: #A3C7C7;*/
+}
+
+#hero {
+    /* padding-top: 80px;
+     height: 100vh;*/
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+#navbar nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+
+.nav-left {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.nav-center {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.nav-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 button,
-.login-form button,
-.login-form input[type="submit"] {
+.form-container button,
+.form-container input[type="submit"] {
     font-family: "inria-serif", sans-serif;
     background-color: #DCC7C4;
     font-weight: 700;
@@ -77,8 +149,28 @@ button,
     border-radius: 12px;
 }
 
+#yourthoughts {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+#yourthoughts img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+#yourthoughts:hover img {
+    transform: scale(1.1);
+}
+
 button:hover,
-.login-form button:hover {
+.form-container button:hover {
     background: #D3B9B6;
 }
 
@@ -92,7 +184,28 @@ button:hover,
     cursor: pointer;
 }
 
-.login-form {
+/*Login-Window*/
+.form-header {
+    position: relative;
+    text-align: center;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 20px solid #DCC7C4;
+    border-bottom: 15px solid transparent;
+
+    cursor: pointer;
+}
+
+.form-container {
     width: 500px;
     margin: 100px auto;
     padding: 25px;
@@ -104,7 +217,7 @@ button:hover,
     gap: 15px;
 }
 
-.login-form p {
+.form-container p {
     color: #441C08;
 }
 
@@ -121,7 +234,13 @@ button:hover,
     color: #441C08;
 }
 
+.form-row textarea,
 .form-row input {
+    font-family: "inria-serif", sans-serif;
+    color: #441C08;
+    font-weight: 400;
+    font-style: normal;
+
     width: 60%;
     padding: 10px 12px;
     border-radius: 12px;
@@ -134,25 +253,27 @@ button:hover,
     transition: 0.2s;
 }
 
+.form-row textarea:focus,
 .form-row input:focus {
     background: #D3B9B6;
     box-shadow: 0 0 0 2px #D3B9B6;
 }
 
+.form-row textarea:not(:placeholder-shown),
 .form-row input:not(:placeholder-shown) {
     background: #DCC7C4;
     color: #441C08;
 }
 
-.login-footer {
+.form-footer {
     text-align: center;
 }
 
-.login-footer a {
+.form-footer a {
     color: #441C08;
 }
 
-.login-footer a:hover {
+.form-footer a:hover {
     text-decoration: underline;
 }
 
@@ -183,12 +304,16 @@ button:hover,
 }
 
 .sheep:hover {
-    filter: brightness(1.2) drop-shadow(0px 0px 8px rgba(255,255,255,0.8));
+    filter: brightness(1.2) drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
 }
 
 @keyframes runRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(100vw + 300px)); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(100vw + 300px));
+    }
 }
 
 .paused .sheep {
@@ -197,16 +322,21 @@ button:hover,
 
 /* Das Pop-up Styling */
 #message-popup {
+    padding: 10px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    background: #EEE9DA;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     position: absolute;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
+
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 100;
-    width: 250px;
+    width: 350px;
     display: none; /* Standardmäßig versteckt */
-    transform: translate(-50%, -100%); /* Positioniert es zentriert über dem Klickpunkt */
-    margin-top: -15px;
     pointer-events: auto;
 }
 
@@ -216,15 +346,52 @@ button:hover,
 
 .close-btn {
     position: absolute;
+    right: 5px;
     top: 10px;
-    right: 10px;
-    background: red;
-    color: white;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+}
+
+.close-btn button {
+    background: transparent;
     border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    padding: 0;
+    margin: 0;
+
+    font-size: 28px;
+    line-height: 1;
+    color: #441C08;
+
     cursor: pointer;
+}
+
+#feelyou {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+#feelyou img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+#feelyou:hover img {
+    transform: scale(1.1);
+}
+
+#popup-date {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
 }
 
 /* Archiv */

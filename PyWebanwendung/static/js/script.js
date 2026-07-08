@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('sheep-container');
+
+    if (!container) {
+        return;
+    }/*const container = document.getElementById('sheep-container');*/
     const popup = document.getElementById('message-popup');
     const popupText = document.getElementById('popup-text');
     const popupDate = document.getElementById('popup-date');
@@ -31,20 +35,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 popupLikes.textContent = sheep.dataset.likes;
                 popupForm.action = sheep.dataset.url;
 
-                const rect = sheep.getBoundingClientRect();
+               /* const rect = sheep.getBoundingClientRect();
                 popup.style.left = `${rect.left + (size / 2)}px`;
                 popup.style.top = `${rect.top - 10}px`;
-                popup.classList.add('active');
+                popup.classList.add('active');*/
+
             });
         });
     }
 
     initSheep();
 
+
     closeBtn.addEventListener('click', () => {
         popup.classList.remove('active');
         container.classList.remove('paused');
     });
+
+
+
 
     // Auto refresh ohne ganze Seite und bestehende Schafe neu zu laden
     setInterval(() => {
@@ -121,3 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 console.log("Skript geladen");
+
+/* Automatisch zur Hero-Section scrollen*/
+window.onload = function () {
+    document.getElementById("hero").scrollIntoView();
+};

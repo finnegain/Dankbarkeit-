@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <section id="about">
+        {% include "main/about.html" %}
+    </section>
+    <section id="hero">
+        <h1>Nachrichten-Archiv</h1>
+        <button><a href="{% url 'overview' %}">&larr; Zurück zur Übersicht</a></button>
 
-<h1>Nachrichten-Archiv</h1>
-<button><a href="{% url 'overview' %}">&larr; Zurück zur Übersicht</a></button>
-
-<div class="archive-grid">
-    {% for message in messages %}
-        <div class="message-tile">
-            <p style="font-style: italic;">"{{ message.text }}"</p>
-            <small style="color: #666;">{{ message.created_at|date:"d.m.Y H:i" }}</small>
-            <hr>
-            <span>👍 {{ message.total_likes }} Likes</span>
+        <div class="archive-grid">
+            {% for message in messages %}
+                <div class="message-tile">
+                    <p style="font-style: italic;">"{{ message.text }}"</p>
+                    <small style="color: #666;">{{ message.created_at|date:"d.m.Y H:i" }}</small>
+                    <hr>
+                    <span>👍 {{ message.total_likes }} Likes</span>
+                </div>
+            {% empty %}
+                <p>Noch nichts los hier</p>
+            {% endfor %}
         </div>
-    {% empty %}
-        <p>Noch nichts los hier</p>
-    {% endfor %}
-</div>
+    </section>
 {% endblock %}

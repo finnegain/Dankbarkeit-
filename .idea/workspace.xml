@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/main/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/main/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/main/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/main/migrations/0002_textmessage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/main/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/main/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/main/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/gallery/upload_text.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/main/upload_text.html" afterDir="false" />
+    <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Refactor Versuch 2">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3152df1b-124d-49e1-88de-caeb3a7b0f82.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3152df1b-124d-49e1-88de-caeb3a7b0f82.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/main/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +116,7 @@
       <workItem from="1781586190189" duration="1955000" />
       <workItem from="1783083276661" duration="556000" />
       <workItem from="1783155230649" duration="4921000" />
-      <workItem from="1783486271545" duration="2601000" />
+      <workItem from="1783486271545" duration="2951000" />
     </task>
     <task id="LOCAL-00001" summary="Add overview page and image database model">
       <option name="closed" value="true" />
@@ -254,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783354809184</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactor Versuch 2">
+      <option name="closed" value="true" />
+      <created>1783488890069</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1783488890069</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +284,7 @@
     <MESSAGE value="Archiv, automatischer Refresh, und About Section" />
     <MESSAGE value="Schafe gif hinzugefügt" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Refactor Versuch 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Versuch 2" />
   </component>
 </project>

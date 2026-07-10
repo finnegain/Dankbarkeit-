@@ -1,20 +1,38 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <section id="about">
         {% include "main/about.html" %}
     </section>
     <section id="hero">
-        <h1>Nachrichten-Archiv</h1>
-        <button><a href="{% url 'overview' %}">&larr; Zurück zur Übersicht</a></button>
+        <div class="form-container">
+            <div class="form-header">
+                <a href="{% url 'overview' %}" class="back-arrow"></a>
+                <h2>Nachrichten-Archiv</h2>
+            </div>
+        </div>
+
 
         <div class="archive-grid">
             {% for message in messages %}
-                <div class="message-tile">
-                    <p style="font-style: italic;">"{{ message.text }}"</p>
-                    <small style="color: #666;">{{ message.created_at|date:"d.m.Y H:i" }}</small>
+                <div class="message-popup archive-message">
+                    <p style="margin-top: 15px; font-style: italic;">
+                        "{{ message.text }}"
+                    </p>
+
+                    <small style="color: #441C08;">
+                        {{ message.created_at|date:"d.m.Y H:i" }}
+                    </small>
+
                     <hr>
-                    <span>👍 {{ message.total_likes }} Likes</span>
+
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <button id="feelyou" type="submit">
+                            <img src="{% static 'images/fuehlich_Schaf.png' %}" alt="Fühl ich">
+                            <span>{{ message.total_likes }}</span>
+                        </button>
+                    </form>
                 </div>
             {% empty %}
                 <p>Noch nichts los hier</p>

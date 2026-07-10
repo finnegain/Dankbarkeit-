@@ -1,32 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <section id="about">
         {% include "main/about.html" %}
     </section>
     <section id="hero">
-    <div class="form-container">
-        <div class="form-header">
-            <a href="{% url 'overview' %}" class="back-arrow"></a>
-            <h2>Neuer Gedanke</h2>
-        </div>
-        <form method="POST" action="">
-            {% csrf_token %}
-
-            {% for field in form %}
-                <div class="form-row">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field }}
-
-                    {% if field.errors %}
-                        <div class="error">
-                            {{ field.errors }}
-                        </div>
-                    {% endif %}
+        <div class="thought-wrapper">
+            <div class="form-container">
+                <div class="form-header">
+                    <a href="{% url 'overview' %}" class="back-arrow"></a>
+                    <h2>Neuer Gedanke</h2>
                 </div>
-            {% endfor %}
-        </form>
-    </div>
+                <form id="thought-form" method="POST" action="">
+                    {% csrf_token %}
 
-</section>
+                    {% for field in form %}
+                        <div class="form-row">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+
+                            {% if field.errors %}
+                                <div class="error">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </form>
+            </div>
+            <div id="submit-sheep">
+                <div class="sheep-content"></div>
+                <button type="submit" form="thought-form" id="packedsheep">
+                    <img src="{% static 'images/packed_sheep.png' %}" alt="Deine Gedanken">
+                    <span>Lass das Schaf deine Gedanken davon tragen...</span>
+
+                    <div class="front-arrow"></div>
+                </button>
+            </div>
+        </div>
+    </section>
 {% endblock %}

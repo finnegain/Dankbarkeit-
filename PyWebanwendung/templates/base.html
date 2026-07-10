@@ -16,7 +16,7 @@
                 You are logged in as {{ user.username }}
                 <form method="post" action="{% url 'logout' %}" style="display: inline;">
                     {% csrf_token %}
-                    <button type="submit">Logout</button>
+                    <button id="logout-btn" type="submit">Logout</button>
                 </form>
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
@@ -41,7 +41,8 @@
     <source src="{% static 'music/bubbles.mp3' %}" type="audio/mpeg">
     Dein Browser unterstützt kein Audio.
 </audio>
-
-<button id="music-toggle">🎵 Musik abspielen</button>
+<button id="music-toggle" class="music-button">
+    <img id="music-icon" src="{% static 'images/nomusic_sheep.png' %}" alt="Musik abspielen">
+</button>
 </body>
 </html>

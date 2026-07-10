@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-
+from django.http import JsonResponse
 from main.models import TextMessage
 
 class TextMessageForm(forms.ModelForm):
@@ -45,11 +45,18 @@ def upload_text(request):
 
 @login_required
 def like_message(request, pk):
-    message = get_object_or_404(TextMessage, pk=pk)
 
-    if message.likes.filter(id=request.user.id).exists():
-        message.likes.remove(request.user)
-    else:
+    if request.method == "POST":
+
+        message = TextMessage.objects.get(pk=pk)
+
         message.likes.add(request.user)
 
-    return redirect('overview')
+        return JsonResponse({
+            "likes": message.total_likes
+        })
+
+
+    return JsonResponse({
+        "error": "Invalid request"
+    }, status=400)

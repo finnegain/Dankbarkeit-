@@ -9,6 +9,7 @@ class TextMessage(models.Model):
     likes = models.ManyToManyField(User, related_name='liked_messages', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    @property
     def total_likes(self):
         return self.likes.count()
 

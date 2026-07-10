@@ -138,6 +138,20 @@ html {
     gap: 15px;
 }
 
+#logout-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: "inria-serif", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    text-decoration: underline;
+}
+
 .form-container button,
 .form-container input[type="submit"] {
     font-family: "inria-serif", sans-serif;
@@ -180,7 +194,25 @@ html {
     transform: scale(1.1);
 }
 
-button:hover,
+.music-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+.music-button img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.music-button:hover img {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
 .form-container button:hover {
     background: #D3B9B6;
 }
@@ -217,7 +249,8 @@ button:hover,
 }
 
 .form-container {
-    width: 500px;
+    min-width: 500px;
+    max-width: 700px;
     margin: 100px auto;
     margin-bottom: 5px;
     padding: 25px;

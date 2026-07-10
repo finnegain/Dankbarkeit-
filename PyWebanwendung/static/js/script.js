@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const popupLikes = document.getElementById('popup-likes');
     const popupForm = document.getElementById('popup-form');
     const closeBtn = document.getElementById('close-popup');
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const feelButton = document.getElementById('feelyou');
 
     function initSheep() {
         const allSheep = document.querySelectorAll('.sheep');
@@ -52,7 +54,50 @@ document.addEventListener("DOMContentLoaded", function () {
         container.classList.remove('paused');
     });
 
+    feelButton.addEventListener('click', () => {
 
+    const url = popupForm.action;
+
+
+    fetch(url, {
+
+        method: "POST",
+
+        headers: {
+            "X-CSRFToken": csrfToken,
+            "X-Requested-With": "XMLHttpRequest"
+        }
+
+    })
+
+
+    .then(response => response.json())
+
+
+    .then(data => {
+
+        // Zahl im Popup aktualisieren
+        popupLikes.textContent = data.likes;
+
+
+        // auch das Schaf-Dataset aktualisieren
+        const activeSheep = document.querySelector(
+            `.sheep[data-url="${url}"]`
+        );
+
+        if (activeSheep) {
+            activeSheep.dataset.likes = data.likes;
+        }
+
+
+    })
+
+
+    .catch(error => {
+        console.error("Like Fehler:", error);
+    });
+
+});
 
 
     // Auto refresh ohne ganze Seite und bestehende Schafe neu zu laden
@@ -93,42 +138,57 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById('bg-music');
     const toggleBtn = document.getElementById('music-toggle');
+    const musicIcon = document.getElementById('music-icon');
 
     const isPlaying = localStorage.getItem('musicPlaying') === 'true';
     const trackPosition = localStorage.getItem('musicPosition') || 0;
 
     audio.currentTime = trackPosition;
 
+    function setPlayingIcon() {
+        musicIcon.src = "/static/images/music_sheep.png";
+        musicIcon.alt = "Musik pausieren";
+    }
+
+    function setPausedIcon() {
+        musicIcon.src = "/static/images/nomusic_sheep.png";
+        musicIcon.alt = "Musik abspielen";
+    }
+
     if (isPlaying) {
         audio.play().then(() => {
-            toggleBtn.innerHTML = "Musik pausieren";
+            setPlayingIcon();
         }).catch(error => {
-            console.log("Browser hat Autoplay blockiert. User muss erst klicken.");
-            toggleBtn.innerHTML = "Musik abspielen";
+            console.log("Browser hat Autoplay blockiert.");
+            setPausedIcon();
             localStorage.setItem('musicPlaying', 'false');
         });
     } else {
-        toggleBtn.innerHTML = "Musik abspielen";
+        setPausedIcon();
     }
 
-    // Play Button
+
+    // Play / Pause Button
     toggleBtn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            toggleBtn.innerHTML = "Musik pausieren";
+            setPlayingIcon();
             localStorage.setItem('musicPlaying', 'true');
         } else {
             audio.pause();
-            toggleBtn.innerHTML = "Musik abspielen";
+            setPausedIcon();
             localStorage.setItem('musicPlaying', 'false');
         }
     });
 
-    // Musk Timecode merken um dort wieder einzusetzen
+
+    // Position speichern
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('musicPosition', audio.currentTime);
     });
 });
+
+
 console.log("Skript geladen");
 
 /* Automatisch zur Hero-Section scrollen*/

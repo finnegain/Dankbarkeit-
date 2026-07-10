@@ -430,9 +430,8 @@ html {
 }
 
 .archive-message {
-    padding: 10px;
-    padding-left: 50px;
-    padding-bottom: 50px;
+    padding: 20px;
+    padding-bottom: 0px;
     border-radius: 20px;
     background: #EEE9DA;
 
@@ -447,7 +446,7 @@ html {
 }
 
 #message-popup {
-    padding: 10px;
+    padding: 20px;
     padding-left: 50px;
     padding-bottom: 50px;
     border-radius: 20px;

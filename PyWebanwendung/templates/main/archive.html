@@ -25,14 +25,6 @@
                     </small>
 
                     <hr>
-
-                    <form method="POST" action="">
-                        {% csrf_token %}
-                        <button id="feelyou" type="submit">
-                            <img src="{% static 'images/fuehlich_Schaf.png' %}" alt="Fühl ich">
-                            <span>{{ message.total_likes }}</span>
-                        </button>
-                    </form>
                 </div>
             {% empty %}
                 <p>Noch nichts los hier</p>

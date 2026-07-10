@@ -38,9 +38,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 popupForm.action = sheep.dataset.url;
 
                 const rect = sheep.getBoundingClientRect();
-                popup.style.left = `${rect.left + (size / 2)}px`;
-                popup.style.top = `${rect.top - 10}px`;
+
+
+// Popup erstmal sichtbar machen, damit Größe bekannt ist
                 popup.classList.add('active');
+
+
+// Popup-Größe ermitteln
+                const popupRect = popup.getBoundingClientRect();
+
+                let left = rect.left + (rect.width / 2) - (popupRect.width / 2);
+                let top = rect.top - popupRect.height - 20;
+
+
+// Prüfen: links außerhalb?
+                if (left < 10) {
+                    left = 10;
+                }
+
+
+// Prüfen: rechts außerhalb?
+                if (left + popupRect.width > window.innerWidth - 10) {
+                    left = window.innerWidth - popupRect.width - 10;
+                }
+
+
+// Prüfen: oben außerhalb?
+                if (top < 10) {
+
+                    // Dann Popup unter das Schaf setzen
+                    top = rect.bottom + 20;
+
+                }
+
+
+// Prüfen: unten außerhalb?
+                if (top + popupRect.height > window.innerHeight - 10) {
+
+                    top = window.innerHeight - popupRect.height - 10;
+
+                }
+
+
+                popup.style.left = `${left}px`;
+                popup.style.top = `${top}px`;
 
             });
         });
@@ -56,48 +97,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     feelButton.addEventListener('click', () => {
 
-    const url = popupForm.action;
+        const url = popupForm.action;
 
 
-    fetch(url, {
+        fetch(url, {
 
-        method: "POST",
+            method: "POST",
 
-        headers: {
-            "X-CSRFToken": csrfToken,
-            "X-Requested-With": "XMLHttpRequest"
-        }
+            headers: {
+                "X-CSRFToken": csrfToken,
+                "X-Requested-With": "XMLHttpRequest"
+            }
 
-    })
-
-
-    .then(response => response.json())
+        })
 
 
-    .then(data => {
-
-        // Zahl im Popup aktualisieren
-        popupLikes.textContent = data.likes;
+            .then(response => response.json())
 
 
-        // auch das Schaf-Dataset aktualisieren
-        const activeSheep = document.querySelector(
-            `.sheep[data-url="${url}"]`
-        );
+            .then(data => {
 
-        if (activeSheep) {
-            activeSheep.dataset.likes = data.likes;
-        }
+                // Zahl im Popup aktualisieren
+                popupLikes.textContent = data.likes;
 
 
-    })
+                // auch das Schaf-Dataset aktualisieren
+                const activeSheep = document.querySelector(
+                    `.sheep[data-url="${url}"]`
+                );
+
+                if (activeSheep) {
+                    activeSheep.dataset.likes = data.likes;
+                }
 
 
-    .catch(error => {
-        console.error("Like Fehler:", error);
+            })
+
+
+            .catch(error => {
+                console.error("Like Fehler:", error);
+            });
+
     });
-
-});
 
 
     // Auto refresh ohne ganze Seite und bestehende Schafe neu zu laden

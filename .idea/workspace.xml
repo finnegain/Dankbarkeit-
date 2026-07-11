@@ -7,13 +7,10 @@
     <list default="true" id="b2a4b95c-fb8f-44b7-a3f2-f07fff2b126d" name="Changes" comment="Refactor Versuch 2">
       <change beforePath="$PROJECT_DIR$/.idea/Dankbarkeit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Dankbarkeit.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_26,_12_42_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_07_26__12_42__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/accounts/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/PyWebanwendung/static/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

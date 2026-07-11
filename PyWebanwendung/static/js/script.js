@@ -39,31 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const rect = sheep.getBoundingClientRect();
 
-
-// Popup erstmal sichtbar machen, damit Größe bekannt ist
                 popup.classList.add('active');
 
 
-// Popup-Größe ermitteln
                 const popupRect = popup.getBoundingClientRect();
 
                 let left = rect.left + (rect.width / 2) - (popupRect.width / 2);
                 let top = rect.top - popupRect.height - 20;
 
 
-// Prüfen: links außerhalb?
                 if (left < 10) {
                     left = 10;
                 }
 
-
-// Prüfen: rechts außerhalb?
                 if (left + popupRect.width > window.innerWidth - 10) {
                     left = window.innerWidth - popupRect.width - 10;
                 }
 
-
-// Prüfen: oben außerhalb?
                 if (top < 10) {
 
                     // Dann Popup unter das Schaf setzen
@@ -71,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-
-// Prüfen: unten außerhalb?
                 if (top + popupRect.height > window.innerHeight - 10) {
 
                     top = window.innerHeight - popupRect.height - 10;

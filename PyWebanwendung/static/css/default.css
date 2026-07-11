@@ -17,6 +17,8 @@ body::before {
     z-index: -1;
 }
 
+
+/*Fonts */
 h1 {
     font-family: "peckham-press", sans-serif;
     font-weight: 400;
@@ -65,7 +67,7 @@ nav {
     font-style: normal;
 }
 
-/*About und Hero scrollen*/
+/*About und Hero untypisches Scrollen*/
 html {
     scroll-behavior: smooth;
 }
@@ -98,6 +100,8 @@ html {
     overflow: visible;
 }
 
+
+/*Navigation*/
 #navbar {
     position: fixed;
     top: 0;
@@ -152,23 +156,8 @@ html {
     text-decoration: underline;
 }
 
-.form-container button,
-.form-container input[type="submit"] {
-    font-family: "inria-serif", sans-serif;
-    background-color: #DCC7C4;
-    font-weight: 700;
-    font-style: normal;
-    border: none;
-    color: #441C08;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-}
 
+/*Gedankenshaf links unten*/
 #yourthoughts {
     position: fixed;
     left: 30px;
@@ -194,6 +183,7 @@ html {
     transform: scale(1.1);
 }
 
+/*Music Button*/
 .music-button {
     background: transparent;
     border: none;
@@ -213,10 +203,6 @@ html {
     transition: 0.2s ease;
 }
 
-.form-container button:hover {
-    background: #D3B9B6;
-}
-
 #music-toggle {
     position: fixed;
     bottom: 20px;
@@ -228,6 +214,28 @@ html {
 }
 
 /*Fenster-Form*/
+/*Form Styling */
+.form-container button,
+.form-container input[type="submit"] {
+    font-family: "inria-serif", sans-serif;
+    background-color: #DCC7C4;
+    font-weight: 700;
+    font-style: normal;
+    border: none;
+    color: #441C08;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.form-container button:hover {
+    background: #D3B9B6;
+}
+
 .form-header {
     position: relative;
     text-align: center;
@@ -337,7 +345,7 @@ html {
     border-bottom: 15px solid transparent;
 }
 
-
+/*Gedanken Abschicken Schaf*/
 #submit-sheep {
     display: flex;
     flex-direction: column;
@@ -418,6 +426,7 @@ html {
 
 /* Das Pop-up Styling */
 
+/*Archiv*/
 .archive-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -445,6 +454,7 @@ html {
     box-sizing: border-box;
 }
 
+/*Allgemein*/
 #message-popup {
     padding: 20px;
     padding-left: 50px;
@@ -491,6 +501,7 @@ html {
 }
 
 
+/*Fühl ich Schaf*/
 #feelyou {
     position: absolute;
     bottom: 5px;
@@ -515,23 +526,14 @@ html {
     transform: scale(1.1);
 }
 
+/*Datum im Pop-Up Fenster*/
+
 #popup-date {
     position: absolute;
     right: 15px;
     bottom: 15px;
 }
 
-/* Archiv */
-
-.archive-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 350px);
-    gap: 30px;
-
-    justify-content: center;
-    margin: 30px auto 0;
-    width: fit-content;
-}
 
 .message-tile {
     background: #f9f9f9;

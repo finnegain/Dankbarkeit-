@@ -9,7 +9,7 @@
 
         <div class="form-header">
             <a href="{% url 'overview' %}" class="back-arrow"></a>
-            <h2>Login</h2>
+            <h2>Anmelden</h2>
         </div>
 
         <div class="form-row">
@@ -28,11 +28,11 @@
 
         <input type="hidden" name="next" value="{{ next }}">
 
-        <button type="submit">Login</button>
+        <button type="submit">Anmelden</button>
 
         <div class="form-footer">
-            Don't have an account yet?
-            <a href="{% url 'register' %}">Register now</a>
+            Du hast noch keinen Account?
+            <a href="{% url 'register' %}">Jetzt registrieren</a>
         </div>
 
     </form>
